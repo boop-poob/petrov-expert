@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#1A272A"/>
+<rect x="114" y="190" width="204" height="506" fill="#E4E8E7"/>
+<rect x="353" y="112" width="206" height="584" fill="#295B66"/>
+<rect x="594" y="256" width="206" height="440" fill="#E4E8E7"/>
+<rect x="835" y="154" width="205" height="542" fill="#547E86"/>
+<path d="M114 302H318M114 414H318M114 526H318M353 225H559M353 338H559M353 451H559M353 564H559M594 369H800M594 482H800M835 267H1040M835 380H1040M835 493H1040" stroke="#11171A" stroke-width="6"/>
+<path d="M70 695H1130" stroke="#A64B36" stroke-width="10"/>
+<text x="85" y="103" fill="#F4F2ED" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">ОБЪЕКТ 04</text>
+<text x="85" y="149" fill="#A9C8CC" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">ЖИЛОЙ КОМПЛЕКС</text>
+</svg>

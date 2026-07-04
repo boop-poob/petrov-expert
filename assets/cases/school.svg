@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#DDE5E3"/>
+<rect x="58" y="73" width="1084" height="650" stroke="#295B66" stroke-width="2"/>
+<path d="M58 220H1142M58 367H1142M58 514H1142M58 661H1142" stroke="#94AFB1" stroke-width="2"/>
+<path d="M178 73V723M298 73V723M418 73V723M538 73V723M658 73V723M778 73V723M898 73V723M1018 73V723" stroke="#94AFB1" stroke-width="2"/>
+<rect x="178" y="220" width="240" height="147" fill="#295B66"/>
+<rect x="658" y="367" width="360" height="147" fill="#11171A"/>
+<rect x="898" y="514" width="120" height="147" fill="#A64B36"/>
+<path d="M92 714L1116 96" stroke="#F4F2ED" stroke-width="10"/>
+<text x="89" y="142" fill="#11171A" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">ОБЪЕКТ 01</text>
+<text x="89" y="189" fill="#295B66" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">СОЦИАЛЬНАЯ ИНФРАСТРУКТУРА</text>
+</svg>

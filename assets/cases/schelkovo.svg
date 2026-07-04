@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#152225"/>
+<path d="M-30 158H430C518 158 548 222 621 222H1230" stroke="#A9C8CC" stroke-width="42"/>
+<path d="M-30 158H430C518 158 548 222 621 222H1230" stroke="#295B66" stroke-width="24"/>
+<path d="M-30 486H267C363 486 395 390 499 390H1230" stroke="#E4E8E7" stroke-width="42"/>
+<path d="M-30 486H267C363 486 395 390 499 390H1230" stroke="#547E86" stroke-width="24"/>
+<circle cx="441" cy="158" r="72" fill="#F4F2ED" stroke="#A64B36" stroke-width="20"/>
+<circle cx="442" cy="158" r="28" fill="#A64B36"/>
+<circle cx="495" cy="390" r="72" fill="#F4F2ED" stroke="#295B66" stroke-width="20"/>
+<circle cx="495" cy="390" r="28" fill="#295B66"/>
+<path d="M142 662H1058" stroke="#A64B36" stroke-width="3"/>
+<text x="142" y="714" fill="#F4F2ED" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">ОБЪЕКТ 02</text>
+<text x="142" y="756" fill="#A9C8CC" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">ИНЖЕНЕРНЫЕ СЕТИ</text>
+</svg>

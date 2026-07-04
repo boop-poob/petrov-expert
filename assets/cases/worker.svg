@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#E4E8E7"/>
+<path d="M157 619L376 163L491 619H157Z" fill="#11171A"/>
+<path d="M475 619L680 240L851 619H475Z" fill="#295B66"/>
+<path d="M238 518L413 282L578 511" stroke="#F4F2ED" stroke-width="28"/>
+<path d="M572 501L702 333L803 496" stroke="#F4F2ED" stroke-width="28"/>
+<path d="M96 692H1104" stroke="#A64B36" stroke-width="10"/>
+<path d="M94 95L1111 693" stroke="#A64B36" stroke-width="2"/>
+<text x="96" y="144" fill="#11171A" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">ОБЪЕКТ 03</text>
+<text x="96" y="191" fill="#295B66" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">РЕСТАВРАЦИЯ</text>
+</svg>
