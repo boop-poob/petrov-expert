@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://gp-construction.vercel.app/sitemap.xml
