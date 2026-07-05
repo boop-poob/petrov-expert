@@ -1,11 +1,9 @@
-<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="800" fill="#1A272A"/>
-<rect x="114" y="190" width="204" height="506" fill="#E4E8E7"/>
-<rect x="353" y="112" width="206" height="584" fill="#295B66"/>
-<rect x="594" y="256" width="206" height="440" fill="#E4E8E7"/>
-<rect x="835" y="154" width="205" height="542" fill="#547E86"/>
-<path d="M114 302H318M114 414H318M114 526H318M353 225H559M353 338H559M353 451H559M353 564H559M594 369H800M594 482H800M835 267H1040M835 380H1040M835 493H1040" stroke="#11171A" stroke-width="6"/>
-<path d="M70 695H1130" stroke="#A64B36" stroke-width="10"/>
-<text x="85" y="103" fill="#F4F2ED" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">ОБЪЕКТ 04</text>
-<text x="85" y="149" fill="#A9C8CC" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">ЖИЛОЙ КОМПЛЕКС</text>
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">Абстрактная архитектурная композиция</title><desc id="desc">Геометрическая композиция в цветах сайта.</desc>
+<rect width="1200" height="800" fill="#142023"/>
+<path d="M86 690H1114" stroke="#A64B36" stroke-width="9"/>
+<rect x="126" y="242" width="184" height="448" fill="#E4E8E7"/><rect x="342" y="142" width="214" height="548" fill="#2B626F"/><rect x="588" y="294" width="176" height="396" fill="#DDE5E3"/><rect x="796" y="186" width="266" height="504" fill="#1D4650"/>
+<path d="M126 342H310M126 442H310M126 542H310M342 242H556M342 342H556M342 442H556M342 542H556M588 394H764M588 494H764M796 286H1062M796 386H1062M796 486H1062M796 586H1062" stroke="#142023" stroke-width="5"/>
+<path d="M84 162H666M84 162V690M1114 690V526" stroke="#9FC0C7" stroke-width="2" opacity=".72"/>
+<circle cx="997" cy="162" r="28" fill="#A64B36"/>
 </svg>

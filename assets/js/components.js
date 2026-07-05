@@ -14,14 +14,14 @@
           <img src="${link('assets/images/brand-mark.svg')}" width="42" height="42" alt="" aria-hidden="true">
           <span class="brand-text">
             <strong>${cfg.expertName || 'Георгий Петров'}</strong>
-            <span>${cfg.expertRole || 'Эксперт по строительным проектам'}</span>
+            <span>${cfg.expertRole || 'Эксперт по управлению строительными проектами'}</span>
           </span>
         </a>
 
         <nav class="desktop-nav" aria-label="Основная навигация">
-          <a href="${link('services.html')}" ${active('services')}>Компетенции</a>
+          <a href="${link('services.html')}" ${active('services')}>Форматы работы</a>
           <a href="${link('cases.html')}" ${active('cases')}>Кейсы</a>
-          <a href="${link('about.html')}" ${active('about')}>О эксперте</a>
+          <a href="${link('about.html')}" ${active('about')}>Об эксперте</a>
           <a href="${link('contacts.html')}" ${active('contacts')}>Контакты</a>
         </nav>
 
@@ -36,9 +36,9 @@
       </div>
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
         <nav aria-label="Мобильная навигация">
-          <a href="${link('services.html')}">Компетенции</a>
+          <a href="${link('services.html')}">Форматы работы</a>
           <a href="${link('cases.html')}">Кейсы</a>
-          <a href="${link('about.html')}">О эксперте</a>
+          <a href="${link('about.html')}">Об эксперте</a>
           <a href="${link('contacts.html')}">Контакты</a>
         </nav>
         <div class="mobile-menu-contacts">
@@ -56,16 +56,16 @@
             <img src="${link('assets/images/brand-mark.svg')}" width="42" height="42" alt="" aria-hidden="true">
             <span class="brand-text">
               <strong>${cfg.expertName || 'Георгий Петров'}</strong>
-              <span>${cfg.expertRole || 'Эксперт по строительным проектам'}</span>
+              <span>${cfg.expertRole || 'Эксперт по управлению строительными проектами'}</span>
             </span>
           </a>
-          <p>Независимая оценка, управленческая диагностика и сопровождение сложных строительных проектов.</p>
+          <p>Независимая оценка, антикризисное управление и сопровождение сложных строительных проектов.</p>
         </div>
         <div class="footer-column">
           <p class="footer-title">Навигация</p>
-          <a href="${link('services.html')}">Компетенции</a>
+          <a href="${link('services.html')}">Форматы работы</a>
           <a href="${link('cases.html')}">Кейсы</a>
-          <a href="${link('about.html')}">О эксперте</a>
+          <a href="${link('about.html')}">Об эксперте</a>
           <a href="${link('contacts.html')}">Контакты</a>
         </div>
         <div class="footer-column">
@@ -87,10 +87,10 @@
       <div class="modal-backdrop" data-close-lead></div>
       <div class="modal-panel" role="document">
         <button class="modal-close" type="button" data-close-lead aria-label="Закрыть форму">×</button>
-        <p class="eyebrow">Первичный разбор</p>
-        <h2 id="lead-modal-title">Опишите объект или ситуацию</h2>
-        <p class="modal-lead">Достаточно кратко: на каком этапе объект, что уже известно и какое решение нужно принять.</p>
-        <form class="lead-form" data-lead-form novalidate>
+        <p class="eyebrow">Первичное обращение</p>
+        <h2 id="lead-modal-title">Кратко опишите объект и задачу</h2>
+        <p class="modal-lead">Достаточно нескольких предложений: на какой стадии объект, что уже известно и какое решение необходимо принять.</p>
+        <form class="lead-form" data-lead-form action="${cfg.formEndpoint || '#'}" method="POST" novalidate>
           <div class="form-honeypot" aria-hidden="true">
             <label>Не заполняйте это поле <input name="website" tabindex="-1" autocomplete="off"></label>
           </div>
@@ -100,28 +100,30 @@
               <input name="name" autocomplete="name" required>
             </label>
             <label class="field">
-              <span>Компания / роль</span>
+              <span>Компания / должность</span>
               <input name="company" autocomplete="organization">
             </label>
           </div>
           <label class="field">
-            <span>Как связаться</span>
+            <span>Контакты для связи</span>
             <input name="contact" placeholder="Телефон, e-mail или Telegram" required>
           </label>
           <label class="field">
-            <span>Кратко о задаче</span>
+            <span>Суть задачи</span>
             <textarea name="message" rows="5" required placeholder="Например: объект на этапе ...; нужно оценить ...; решение требуется до ..."></textarea>
           </label>
+          <input type="hidden" name="_subject" value="Новая заявка с сайта — Георгий Петров">
+          <input type="hidden" name="page_url">
           <input type="hidden" name="utm_source">
           <input type="hidden" name="utm_medium">
           <input type="hidden" name="utm_campaign">
           <label class="checkbox-field">
             <input type="checkbox" name="privacy" required>
-            <span>Я согласен(на) с <a href="${link('privacy.html')}" target="_blank">политикой обработки персональных данных</a>.</span>
+            <span>Даю согласие на обработку персональных данных в соответствии с <a href="${link('privacy.html')}" target="_blank">политикой обработки персональных данных</a>.</span>
           </label>
           <p class="form-error" data-form-error aria-live="polite"></p>
-          <button class="button button-primary button-full" type="submit">Отправить запрос</button>
-          <p class="form-note">До подключения формы текст запроса будет скопирован, а затем откроется Telegram.</p>
+          <button class="button button-primary button-full" type="submit">Отправить заявку</button>
+          <p class="form-note" data-form-note>Заявка будет отправлена на рабочую почту. После отправки откроется страница подтверждения.</p>
         </form>
       </div>
     </div>`;

@@ -1,0 +1,56 @@
+ОБНОВЛЕНИЕ САЙТА ДО V4
+
+1. Распакуйте архив petrov-expert-site-v4.zip.
+2. На GitHub откройте репозиторий petrov-expert.
+3. Замените файлы из распакованной папки по тем же путям.
+
+В КОРНЕ РЕПОЗИТОРИЯ ЗАМЕНИТЬ:
+- index.html
+- about.html
+- services.html
+- cases.html
+- case-school.html
+- case-schelkovo.html
+- case-worker.html
+- case-microdistrict.html
+- contacts.html
+- thank-you.html
+- privacy.html
+- 404.html
+- robots.txt
+- sitemap.xml
+- README.md
+- CHANGELOG_V4.md
+
+В assets/js/ ЗАМЕНИТЬ:
+- config.js
+- components.js
+- main.js
+
+В assets/css/ ЗАМЕНИТЬ:
+- style.css
+
+В assets/images/ ДОБАВИТЬ:
+- georgiy-on-site.webp
+- georgiy-profile.webp
+- school-novo-peredelkino.webp
+- schelkovo-networks.webp
+- worker-restoration.webp
+- worker-assembly.webp
+- worker-hand.webp
+- worker-opening.webp
+- recognition-letter.webp
+- recognition-medals.webp
+- README.md (по желанию)
+
+В assets/cases/ ЗАМЕНИТЬ:
+- microdistrict.svg
+
+4. После Commit Vercel сам сделает новый deploy.
+5. На опубликованном сайте отправьте тестовую заявку с пометкой ТЕСТ.
+6. Проверьте 1042341@mail.ru и раздел Submissions в Formspree.
+
+ВАЖНО:
+- Formspree endpoint уже вставлен: https://formspree.io/f/mpqgkvby
+- Resend и настройки Vercel для почты не нужны.
+- api/contact.js и .env.example в прошлой версии больше не нужны: можно удалить, но они не мешают, если останутся.

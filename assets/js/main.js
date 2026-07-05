@@ -26,14 +26,30 @@
     });
     qsa('[data-current-year]').forEach((el) => el.textContent = new Date().getFullYear());
 
-    qsa('[data-registry]').forEach((el) => {
-      if (cfg.registryNumber && cfg.registryUrl) {
-        el.href = cfg.registryUrl;
-        el.textContent = `НРС НОСТРОЙ № ${cfg.registryNumber}`;
-        el.classList.remove('is-hidden');
-      } else {
-        el.remove();
+    qsa('[data-registry-card]').forEach((card) => {
+      if (!cfg.registryUrl) {
+        card.remove();
+        return;
       }
+      qsa('[data-registry-link], [data-registry-qr-link]', card).forEach((el) => {
+        el.href = cfg.registryUrl;
+      });
+      qsa('[data-registry-label]', card).forEach((el) => {
+        el.textContent = cfg.registryLabel || 'Проверить запись в НРС НОСТРОЙ';
+      });
+      qsa('[data-registry-work-type]', card).forEach((el) => {
+        el.textContent = cfg.registryWorkType || '';
+      });
+      qsa('[data-registry-number]', card).forEach((el) => {
+        if (cfg.registryNumber) {
+          el.textContent = `Идентификационный номер: ${cfg.registryNumber}`;
+        } else {
+          el.remove();
+        }
+      });
+      qsa('[data-registry-qr]', card).forEach((img) => {
+        if (cfg.registryQrPath) img.src = cfg.registryQrPath;
+      });
     });
 
     qsa('[data-legal-name]').forEach((el) => el.textContent = cfg.legalName || 'Заполнить до публикации');
@@ -119,62 +135,54 @@
         if (input) input.value = value;
       });
 
+      const note = qs('[data-form-note]', form);
+      if (note) {
+        note.textContent = 'Заявка будет отправлена на рабочую почту. После отправки откроется страница подтверждения.';
+      }
+
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const error = qs('[data-form-error]', form);
+        error.classList.remove('is-success');
         error.textContent = '';
+
         if (!form.checkValidity()) {
-          error.textContent = 'Проверьте обязательные поля и согласие с политикой.';
+          error.textContent = 'Заполните обязательные поля и подтвердите согласие с политикой обработки персональных данных.';
           form.reportValidity();
           return;
         }
+
         const data = new FormData(form);
         if (data.get('website')) return;
+        data.set('page_url', window.location.href);
 
         const submitButton = qs('button[type="submit"]', form);
+        const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
         submitButton.textContent = 'Отправляем…';
 
         try {
-          if (cfg.formEndpoint) {
-            const response = await fetch(cfg.formEndpoint, {
-              method: 'POST',
-              headers: { Accept: 'application/json' },
-              body: data
-            });
-            if (!response.ok) throw new Error('Endpoint returned an error');
-            track('form_submit');
-            window.location.href = `${document.documentElement.dataset.base || './'}thank-you.html`;
-            return;
+          if (!cfg.formEndpoint || !/^https:\/\/formspree\.io\/f\//.test(cfg.formEndpoint)) {
+            throw new Error('missing_formspree_endpoint');
           }
 
-          const message = [
-            'Запрос с сайта',
-            `Имя: ${data.get('name')}`,
-            `Компания / роль: ${data.get('company') || '—'}`,
-            `Контакт: ${data.get('contact')}`,
-            `Задача: ${data.get('message')}`,
-            `Источник: ${utm.utm_source || 'прямой переход'}`
-          ].join('\n');
+          const response = await fetch(cfg.formEndpoint, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: data
+          });
 
-          let wasCopied = false;
-          try {
-            await navigator.clipboard?.writeText(message);
-            wasCopied = Boolean(navigator.clipboard);
-          } catch (_) {
-            // Copy permission may be unavailable; opening the direct chat is still useful.
+          if (!response.ok) {
+            const details = await response.json().catch(() => ({}));
+            throw new Error(details?.errors?.[0]?.message || 'formspree_error');
           }
+
           track('form_submit');
-          error.classList.add('is-success');
-          error.textContent = wasCopied
-            ? 'Текст запроса скопирован. В открывшемся чате вставьте его и отправьте.'
-            : 'Откроется Telegram. Скопируйте описание задачи из формы и отправьте его в чате.';
-          if (cfg.telegramUrl) window.open(cfg.telegramUrl, '_blank', 'noopener');
-          submitButton.textContent = 'Запрос подготовлен';
+          window.location.href = `${document.documentElement.dataset.base || './'}thank-you.html`;
         } catch (err) {
-          error.textContent = 'Не удалось отправить форму. Напишите, пожалуйста, в Telegram или MAX.';
+          error.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз или напишите в Telegram / MAX.';
           submitButton.disabled = false;
-          submitButton.textContent = 'Отправить запрос';
+          submitButton.textContent = originalButtonText;
         }
       });
     });
